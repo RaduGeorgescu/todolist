@@ -1,0 +1,22 @@
+<%- include("header") -%>
+  <div class="box" id="heading">
+    <h1>To do list for <%= kindofday %> </h1>
+  </div>
+  <div class="box">
+    <% for (let i = 0; i<newListItems.length; i++) { %>
+    <div class="item">
+      <input type="checkbox">
+      <p><%= newListItems[i] %></p>
+    </div>
+    <% } %>
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="button">+</button>
+    </form>
+  </div>
+  <!-- <script type="text/javascript">
+$('#btnEliminar').on('click', function () {
+  $("#input[type='checkbox']:checked").closest("tr").remove();
+});
+</script> -->
+<%- include("footer") -%>
